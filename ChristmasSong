@@ -1,0 +1,46 @@
+import java.util.List;
+import java.util.ArrayList;
+
+public class ChristmasSong
+{
+    public static void main(String[] args)
+    {
+        List<String> daysofChristmas = new ArrayList<String>();
+
+        daysofChristmas.add(new String("A patridge in a pear tree."));
+        daysofChristmas.add(new String("Two turtle doves, "));
+        daysofChristmas.add(new String("Three French hens, "));
+        daysofChristmas.add(new String("Four calling birds, "));
+        daysofChristmas.add(new String("Five golden rings, "));
+        daysofChristmas.add(new String("Six geese a-laying, "));
+        daysofChristmas.add(new String("Seven swans a-swimming, "));
+        daysofChristmas.add(new String("Eight maids a-milking, "));
+        daysofChristmas.add(new String("Nine ladies dancing, "));
+        daysofChristmas.add(new String("Ten lords a-leaping, "));
+        daysofChristmas.add(new String("Eleven pipers piping, "));
+        daysofChristmas.add(new String("Twelve drummers drumming, "));
+
+        song(daysofChristmas, 0);
+    }//end main
+
+    public static void song(List<String> days, int num)
+    {
+        if (num == 12)
+            return;
+
+        sing("On the " + (num + 1) + " day of christmas my true love gave to me.");
+
+        for(int i = 0; i < (num + 1); i++)
+        {
+            sing(days.get(i));
+        }
+
+        sing("\n");
+        song(days, num + 1);
+    }//end song
+
+    public static void sing(Object o)
+    {
+        System.out.println(o.toString());
+    }
+}//end christmassong
